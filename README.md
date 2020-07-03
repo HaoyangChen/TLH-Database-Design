@@ -1,4 +1,5 @@
 # Databse Design - The Living Hood App
+### Author: Haoyang (Eric) Chen
 
 ## 1: Defining the purpose of the databse:
 Residential Services Tracking and Management
@@ -22,15 +23,15 @@ Residential Services Tracking and Management
 - Service_Provider
 - Lease
 - Account_Information
-- Resident_Statement
-- Credit_Card_Info
+- Bill
+- Credit_Card_Information
 - Work_Order
 - Category
 - Feedback
 - Announcement
 - Event
-- Calendar
 - Cleaning_Service
+- Community
 
 
 - Administrator (Do we need this?)//
@@ -39,10 +40,87 @@ Residential Services Tracking and Management
 - User_to_Role//
 - Role_to_Permission //
 - Permission//
+- Calendar // 
 
 ## 4: Deciding Relationships between tables
-1) 1 account information is associated with only 1 tenant
-2) 1 tenant 
+-  1 account information is associated with only 1 tenant
+-  1 tenant has only one account information
+-  1 account pays 1 or more bills
+-  1 bill is paid by only 1 account
+-  1 tenant has 1 or more lease
+-  1 lease is completed by 1 or more tenants
+-  1 tenant has 1 or more credit card information
+-  1 credit card information is only associated with 1 tenant
+-  1 tenant lives in only 1 property
+-  1 property has 1 or many tenants
+-  1 property has many rooms
+-  1 room is associated with only 1 property
+-  1 tenant can order 1 or many work orders
+-  1 work order is placed by only 1 tenant
+-  1 work order has only 1 category
+-  1 category has many work orders
+-  1 service provider is in charge of 1 or more categories
+-  1 category has 1 or more service providers
+-  1 service provider can give 1 or more feedbacks
+-  1 feedback is given by only 1 service provider
+-  1 apartment is associated with only 1 community
+-  1 community has 1 or many apartments
+-  1 community can give one or many annoucements
+-  1 announcement is associated with 1 community
+-  1 community can host 1 or many events
+-  1 event is associated with 1 or many communities
+
+## 5: Deciding the columns, keys, and constraints
+
+### Property: 
+| Column | Type | Constraint | key|
+|---|---|---|---|
+| Property_id | INT | UNIQUE | PK|
+| Property_name | VARCHAR | NOT NULL ||
+| Property_address | VARCHAR | NOT NULL ||
+| Property_description | VARCHAR | NOT NULL ||
+
+--------------------
+### Room: 
+| Column | Type | Constraint | key|
+|---|---|---|---|
+| Room_id | INT | UNIQUE | PK|
+| Room_number | INT | NOT NULL ||
+| Vacancy | BOOLEAN | NOT NULL ||
+| Resident_Number | INT | NOT NULL ||
+
+-----------------------
+### Tenant: 
+| Column | Type | Constraint | key|
+|---|---|---|---|
+| Tenant_id| INT | UNIQUE | PK|
+| First_name | VARCHAR |NOT NULL||
+| Last_name | VARCHAR | NOT NULL||
+| Identification | INT | NOT NULL ||
+| Date_of_Birth | DATE  | NOT NULL ||
+| Email | VARCHAR | NOT NULL ||
+| Phone_Number | INT | NOT NULL ||
+| Move_in_Date | DATE | NOT NULL ||
+| Room_Id | INT | NOT NULL | FK |
+| Property_Id | INT | NOT NULL |FK|
+| Lease_id | INT | NOT NULL | FK |
+| Account_id | INT | NOT NULL | FK |
+
+----------------------
+
+### Account_Information:
+| Column | Type | Constraint | key|
+|---|---|---|---|
+|Accound_id | INT | UNIQUE | PK |
+|Password | BINARY(16) | NOT NULL ||
+|Date_created | DATE | NOT NULL||
+|Photo| BLOB | NOT NULL||
+|Email|VARCHAR|NOT NULL||
+
+---------------------
+
+### Bill:
+
 
 
 Reference:
