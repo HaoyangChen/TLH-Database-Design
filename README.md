@@ -24,7 +24,6 @@ Residential Services Tracking and Management
 - Lease
 - Account_Information
 - Bill
-- Credit_Card_Information
 - Work_Order
 - Category
 - Feedback
@@ -34,23 +33,23 @@ Residential Services Tracking and Management
 - Community
 
 
-- Administrator (Do we need this?)//
-- User //
-- Role//
-- User_to_Role//
-- Role_to_Permission //
-- Permission//
-- Calendar // 
+Entities need to be considered:
+- Administrator (Do we need this?)
+- User (Do we need this?)
+- RolE (Do we need this?)
+- User_to_Role (Do we need this?)
+- Role_to_Permission  (Do we need this?)
+- Permission (Do we need this?)
+- Calendar (Do we need this?)
+- Credit_Card_Information (Do we need this?)
 
 ## 4: Deciding Relationships between tables
 -  1 account information is associated with only 1 tenant
 -  1 tenant has only one account information
--  1 account pays 1 or more bills
--  1 bill is paid by only 1 account
+-  1 tenant pays 1 or more bills
+-  1 bill is paid by 1 or more tenant
 -  1 tenant has 1 or more lease
 -  1 lease is completed by 1 or more tenants
--  1 tenant has 1 or more credit card information
--  1 credit card information is only associated with 1 tenant
 -  1 tenant lives in only 1 property
 -  1 property has 1 or many tenants
 -  1 property has many rooms
@@ -79,6 +78,7 @@ Residential Services Tracking and Management
 | Property_name | VARCHAR | NOT NULL ||
 | Property_address | VARCHAR | NOT NULL ||
 | Property_description | VARCHAR | NOT NULL ||
+| Community_id | INT | NOT NULL | FK |
 
 --------------------
 ### Room: 
@@ -88,6 +88,37 @@ Residential Services Tracking and Management
 | Room_number | INT | NOT NULL ||
 | Vacancy | BOOLEAN | NOT NULL ||
 | Resident_Number | INT | NOT NULL ||
+
+------------------------
+
+### Community: 
+| Column | Type | Constraint | key|
+|---|---|---|---|
+| Community_id | INT | UNIQUE | PK|
+| Community_name | VARCHAR | NOT NULL||
+| Community_description | VARCHAR | NOT NULL||
+| Announcement_id | INT | NOT NULL | FK |
+| Event_id | INT | NOT NULL | FK |
+
+------------------------------
+
+### Announcement: 
+| Column | Type | Constraint | key|
+|---|---|---|---|
+| Announcement_id | INT | UNIQUE | PK|
+| Announcement_name | VARCHAR | NOT NULL ||
+| Announcement_description | VARCHAR | NOT NULL ||
+| Announcement_time | TIME | NOT NULL||
+
+------------------------------
+
+### Event: 
+| Column | Type | Constraint | key|
+|---|---|---|---|
+| Event_id | INT | UNIQUE | PK|
+| Event_name | VARCHAR | NOT NULL ||
+| Event_description | VARCHAR | NOT NULL ||
+| Event_time | TIME | NOT NULL||
 
 -----------------------
 ### Tenant: 
@@ -100,13 +131,23 @@ Residential Services Tracking and Management
 | Date_of_Birth | DATE  | NOT NULL ||
 | Email | VARCHAR | NOT NULL ||
 | Phone_Number | INT | NOT NULL ||
-| Move_in_Date | DATE | NOT NULL ||
 | Room_Id | INT | NOT NULL | FK |
 | Property_Id | INT | NOT NULL |FK|
 | Lease_id | INT | NOT NULL | FK |
 | Account_id | INT | NOT NULL | FK |
+| Bill_id | INT | NOT NULL | FK |
 
 ----------------------
+
+### Lease: 
+| Column | Type | Constraint | key|
+|---|---|---|---|
+| Lease_id| INT | UNIQUE | PK|
+| Start_date | DATE | NOT NULL ||
+| End_date | DATE | NOT NULL ||
+| Move_in_Date | Date | NOT NULL||
+
+------------------------
 
 ### Account_Information:
 | Column | Type | Constraint | key|
@@ -120,8 +161,65 @@ Residential Services Tracking and Management
 ---------------------
 
 ### Bill:
+| Column | Type | Constraint | key|
+|---|---|---|---|
+| Bill_id | INT | UNIQUE | PK |
+| Bill_name| VARCHAR | VARCHAR ||
+| Bill_date | DATE | NOT NULL||
+| Bill_amount| FLOAT | NOT NULL ||
+| Bill_description | VARCHAR | NOT NULL ||
+| Account_Balance | FLOAT | NOT NULL ||
+| Auto_payment | BOOLEAN | NOT NULL ||
 
+----------------------
 
+### Work_Order:
+| Column | Type | Constraint | key|
+|---|---|---|---| 
+| WorkOrder_id | INT | UNIQUE | PK |
+| Category_id | INT | NOT NULL | FK |
+| WorkOrder_name | VARCHAR | NOT NULL ||
+| WorkOrder_description | VARCHAR | NOT NULL ||
+| Problem_photo | BLOB | NOT NULL ||
+| START_TIME_PREFERENCE | DatetIME | NOT NULL||
+| END_TIME_PREFERENCE | Datetime | NOT NULL||
+| Access_Permission | BOOLEAN | NOT NULL||
+| Work_Status | BOOLEAN | NOT NULL ||
+| Feedback_id | INT | NOT NULL | FK |
+| Service_Provider_id | INT | NOT NULL | FK |
 
-Reference:
+-----------------------
+
+### Category:
+| Column | Type | Constraint | key|
+|---|---|---|---| 
+| Category_id | INT | UNIQUE | PK |
+| Category_name | VARCHAR | NOT NULL | |
+| Category_description | VARCHAR | NOT NULL | |
+
+----------------------
+
+### Feedback:
+| Column | Type | Constraint | key|
+|---|---|---|---| 
+| Feedback_id | INT | UNIQUE | PK |
+| Completion_time | Time | NOT NULL ||
+| Maintainence_work_detail | VARCHAR | NOT NULL ||
+| Cost_of_additional_tools | FLOAT | NOT NULL ||
+
+-----------------------
+
+### Service_Provider:
+| Column | Type | Constraint | key|
+|---|---|---|---| 
+| Service_Provider_id | INT | UNIQUE | PK |
+| Service_Provider_Last_name | VARCHAR | NOT NULL | PK |
+| Service_Provider_First_name | VARCHAR | NOT NULL | PK |
+| Category_id | INT | NOT NULL | FK |
+| Date_of_Birth | DATE  | NOT NULL ||
+| Email | VARCHAR | NOT NULL ||
+| Phone_Number | INT | NOT NULL ||
+
+----------------------
+### Reference:
 [Sample Role-Based Access Control System](https://mysql.tutorials24x7.com/blog/guide-to-design-database-for-rbac-in-mysql)
