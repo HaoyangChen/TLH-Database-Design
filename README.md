@@ -1,5 +1,6 @@
 # Databse Design - The Living Hood App
-### Author: Haoyang (Eric) Chen
+### Author: Haoyang (Eric) Chen, Yutong Wei
+### [Live Site](https://haoyangchen.github.io/TLH-Database-Design/)
 
 ## 1: Defining the purpose of the databse:
 Residential Services Tracking and Management
@@ -19,6 +20,9 @@ Residential Services Tracking and Management
 ## 3: Listing down entities to identify tables: 
 - Property
 - Room
+- Location
+- Room_type
+- Laundry_type
 - Tenant
 - Service_Provider
 - Lease
@@ -29,8 +33,8 @@ Residential Services Tracking and Management
 - Feedback
 - Announcement
 - Event
-- Cleaning_Service
 - Community
+- Department
 
 
 Entities need to be considered:
@@ -54,6 +58,8 @@ Entities need to be considered:
 -  1 property has 1 or many tenants
 -  1 property has many rooms
 -  1 room is associated with only 1 property
+-  1 room has 1 room type
+-  1 room has 1 laundry type
 -  1 tenant can order 1 or many work orders
 -  1 work order is placed by only 1 tenant
 -  1 work order has only 1 category
@@ -102,6 +108,34 @@ Entities need to be considered:
 | Room_number | INT | NOT NULL ||
 | Vacancy | BOOLEAN | NOT NULL ||
 | Resident_Number | INT | NOT NULL ||
+| Parking_spot | INT | NOT NULL ||
+| Pet_friendly | BOOLEAN | NOT NULL ||
+| Fitness | BOOLEAN | NOT NULL ||
+| Rooftop_access | BOOLEAN | NOT NULL ||
+| Share_space_tidy_up | BOOLEAN | NOT NULL ||
+| Additional_feature | VARCHAR |  ||
+| Kitchen | BOOLEAN | NOT NULL ||
+| Furnished | BOOLEAN | NOT NULL ||
+| Floor | INT | NOT NULL ||
+| Bathroom | BOOLEAN | NOT NULL ||
+| SQFT | INT | NOT NULL ||
+| Room_type_id | INT | NOT NULL | FK|
+| Laundry_type_id | INT | NOT NULL | FK|
+------------------------
+### Room_type: 
+| Column | Type | Constraint | key|
+|---|---|---|---|
+| Room_type_id | INT | NOT NULL |PK|
+| Room_type_name | VARCHAR | NOT NULL ||
+| Room_type_description | VARCHAR | NOT NULL ||
+
+------------------------
+### Laundry_type: 
+| Column | Type | Constraint | key|
+|---|---|---|---|
+| Laundry_type_id | INT | NOT NULL |PK|
+| Laundry_type_name | VARCHAR | NOT NULL ||
+| Laundry_type_description | VARCHAR | NOT NULL ||
 
 ------------------------
 
