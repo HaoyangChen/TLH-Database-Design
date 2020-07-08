@@ -205,6 +205,7 @@ Entities need to be considered:
 |Date_created | DATE | NOT NULL||
 |Photo| BLOB | NOT NULL||
 |Email|VARCHAR|NOT NULL||
+|Account_Balance | FLOAT | NULL ||
 
 ---------------------
 
@@ -216,8 +217,8 @@ Entities need to be considered:
 | Bill_date | DATE | NOT NULL||
 | Bill_amount| FLOAT | NOT NULL ||
 | Bill_description | VARCHAR | NOT NULL ||
-| Account_Balance | FLOAT | NOT NULL ||
 | Auto_payment | BOOLEAN | NOT NULL ||
+| Paid| Boolean | NOT NULL||
 
 ----------------------
 
@@ -235,6 +236,7 @@ Entities need to be considered:
 | Work_Status | BOOLEAN | NOT NULL ||
 | Feedback_id | INT | NOT NULL | FK |
 | Service_Provider_id | INT | NOT NULL | FK |
+| Tenant_id| INT | NOT NULL| FK |
 
 -----------------------
 
