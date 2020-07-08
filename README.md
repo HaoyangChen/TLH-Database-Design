@@ -76,9 +76,23 @@ Entities need to be considered:
 |---|---|---|---|
 | Property_id | INT | UNIQUE | PK|
 | Property_name | VARCHAR | NOT NULL ||
-| Property_address | VARCHAR | NOT NULL ||
 | Property_description | VARCHAR | NOT NULL ||
 | Community_id | INT | NOT NULL | FK |
+| Property_location | INT | NOT NULL |FK|
+
+--------------------------------
+
+### Location: 
+| Column | Type | Constraint | key|
+|---|---|---|---|
+| Location_id | INT | UNIQUE | PK|
+| Location_name | VARCHAR | NOT NULL ||
+| Location_description | VARCHAR | NOT NULL ||
+| House_Number | INT | NOT NULL | |
+| Street_Name | VARCHAR | NOT NULL | |
+| City | VARCHAR | NOT NULL ||
+| STATE | VARCHAR | NOT NULL ||
+| ZIP_code | INT | NOT NULL ||
 
 --------------------
 ### Room: 
@@ -97,8 +111,6 @@ Entities need to be considered:
 | Community_id | INT | UNIQUE | PK|
 | Community_name | VARCHAR | NOT NULL||
 | Community_description | VARCHAR | NOT NULL||
-| Announcement_id | INT | NOT NULL | FK |
-| Event_id | INT | NOT NULL | FK |
 
 ------------------------------
 
@@ -109,6 +121,7 @@ Entities need to be considered:
 | Announcement_name | VARCHAR | NOT NULL ||
 | Announcement_description | VARCHAR | NOT NULL ||
 | Announcement_time | TIME | NOT NULL||
+| Community_id | INT | UNIQUE | FK|
 
 ------------------------------
 
@@ -119,6 +132,7 @@ Entities need to be considered:
 | Event_name | VARCHAR | NOT NULL ||
 | Event_description | VARCHAR | NOT NULL ||
 | Event_time | TIME | NOT NULL||
+| Community_id | INT | UNIQUE | FK|
 
 -----------------------
 ### Tenant: 
@@ -213,12 +227,23 @@ Entities need to be considered:
 | Column | Type | Constraint | key|
 |---|---|---|---| 
 | Service_Provider_id | INT | UNIQUE | PK |
-| Service_Provider_Last_name | VARCHAR | NOT NULL | PK |
-| Service_Provider_First_name | VARCHAR | NOT NULL | PK |
+| Service_Provider_Last_name | VARCHAR | NOT NULL | |
+| Service_Provider_First_name | VARCHAR | NOT NULL | |
 | Category_id | INT | NOT NULL | FK |
 | Date_of_Birth | DATE  | NOT NULL ||
 | Email | VARCHAR | NOT NULL ||
 | Phone_Number | INT | NOT NULL ||
+| Department_Id| INT | NOT NULL|FK|
+
+--------------------------------------
+
+### Department:
+| Column | Type | Constraint | key|
+|---|---|---|---| 
+|Department_id| INT | NOT NULL | PK |
+|Department_name| VARCHAR | NOT NULL ||
+|Department_description| VARCHAR | NOT NULL ||
+
 
 ----------------------
 ### Reference:
