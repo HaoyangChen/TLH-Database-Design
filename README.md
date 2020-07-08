@@ -25,6 +25,7 @@ Residential Services Tracking and Management
 - Laundry_type
 - Tenant
 - Service_Provider
+- Service_Provider_Category
 - Lease
 - Account_Information
 - Bill
@@ -180,7 +181,6 @@ Entities need to be considered:
 | Email | VARCHAR | NOT NULL ||
 | Phone_Number | INT | NOT NULL ||
 | Room_Id | INT | NOT NULL | FK |
-| Property_Id | INT | NOT NULL |FK|
 | Lease_id | INT | NOT NULL | FK |
 | Account_id | INT | NOT NULL | FK |
 | Bill_id | INT | NOT NULL | FK |
@@ -237,6 +237,8 @@ Entities need to be considered:
 | Feedback_id | INT | NOT NULL | FK |
 | Service_Provider_id | INT | NOT NULL | FK |
 | Tenant_id| INT | NOT NULL| FK |
+| Time_placed|DATETIME| NOT NULL ||
+| Status_Changed_Time|DATETIME| NOT NULL ||
 
 -----------------------
 
@@ -272,6 +274,16 @@ Entities need to be considered:
 | Department_Id| INT | NOT NULL|FK|
 
 --------------------------------------
+
+
+### Service_Provider_Category:
+| Column | Type | Constraint | key|
+|---|---|---|---| 
+| Service_Provider_Category_id | INT | UNIQUE | PK |
+| Service_Provider_id | INT | UNIQUE | FK |
+| Category_id | INT | UNIQUE | FK |
+
+------------------------------------
 
 ### Department:
 | Column | Type | Constraint | key|
