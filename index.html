@@ -96,12 +96,6 @@
 <td></td>
 </tr>
 <tr>
-<td>Property_address</td>
-<td>VARCHAR</td>
-<td>NOT NULL</td>
-<td></td>
-</tr>
-<tr>
 <td>Property_description</td>
 <td>VARCHAR</td>
 <td>NOT NULL</td>
@@ -113,10 +107,78 @@
 <td>NOT NULL</td>
 <td>FK</td>
 </tr>
+<tr>
+<td>Property_location</td>
+<td>INT</td>
+<td>NOT NULL</td>
+<td>FK</td>
+</tr>
 </tbody>
 </table>
 <hr>
-<h3 class="code-line" data-line-start=83 data-line-end=84><a id="Room_83"></a>Room:</h3>
+<h3 class="code-line" data-line-start=84 data-line-end=85><a id="Location_84"></a>Location:</h3>
+<table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th>Column</th>
+<th>Type</th>
+<th>Constraint</th>
+<th>key</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Location_id</td>
+<td>INT</td>
+<td>UNIQUE</td>
+<td>PK</td>
+</tr>
+<tr>
+<td>Location_name</td>
+<td>VARCHAR</td>
+<td>NOT NULL</td>
+<td></td>
+</tr>
+<tr>
+<td>Location_description</td>
+<td>VARCHAR</td>
+<td>NOT NULL</td>
+<td></td>
+</tr>
+<tr>
+<td>House_Number</td>
+<td>INT</td>
+<td>NOT NULL</td>
+<td></td>
+</tr>
+<tr>
+<td>Street_Name</td>
+<td>VARCHAR</td>
+<td>NOT NULL</td>
+<td></td>
+</tr>
+<tr>
+<td>City</td>
+<td>VARCHAR</td>
+<td>NOT NULL</td>
+<td></td>
+</tr>
+<tr>
+<td>STATE</td>
+<td>VARCHAR</td>
+<td>NOT NULL</td>
+<td></td>
+</tr>
+<tr>
+<td>ZIP_code</td>
+<td>INT</td>
+<td>NOT NULL</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 class="code-line" data-line-start=97 data-line-end=98><a id="Room_97"></a>Room:</h3>
 <table class="table table-striped table-bordered">
 <thead>
 <tr>
@@ -154,7 +216,7 @@
 </tbody>
 </table>
 <hr>
-<h3 class="code-line" data-line-start=93 data-line-end=94><a id="Community_93"></a>Community:</h3>
+<h3 class="code-line" data-line-start=107 data-line-end=108><a id="Community_107"></a>Community:</h3>
 <table class="table table-striped table-bordered">
 <thead>
 <tr>
@@ -183,22 +245,10 @@
 <td>NOT NULL</td>
 <td></td>
 </tr>
-<tr>
-<td>Announcement_id</td>
-<td>INT</td>
-<td>NOT NULL</td>
-<td>FK</td>
-</tr>
-<tr>
-<td>Event_id</td>
-<td>INT</td>
-<td>NOT NULL</td>
-<td>FK</td>
-</tr>
 </tbody>
 </table>
 <hr>
-<h3 class="code-line" data-line-start=104 data-line-end=105><a id="Announcement_104"></a>Announcement:</h3>
+<h3 class="code-line" data-line-start=116 data-line-end=117><a id="Announcement_116"></a>Announcement:</h3>
 <table class="table table-striped table-bordered">
 <thead>
 <tr>
@@ -233,10 +283,16 @@
 <td>NOT NULL</td>
 <td></td>
 </tr>
+<tr>
+<td>Community_id</td>
+<td>INT</td>
+<td>UNIQUE</td>
+<td>FK</td>
+</tr>
 </tbody>
 </table>
 <hr>
-<h3 class="code-line" data-line-start=114 data-line-end=115><a id="Event_114"></a>Event:</h3>
+<h3 class="code-line" data-line-start=127 data-line-end=128><a id="Event_127"></a>Event:</h3>
 <table class="table table-striped table-bordered">
 <thead>
 <tr>
@@ -271,10 +327,16 @@
 <td>NOT NULL</td>
 <td></td>
 </tr>
+<tr>
+<td>Community_id</td>
+<td>INT</td>
+<td>UNIQUE</td>
+<td>FK</td>
+</tr>
 </tbody>
 </table>
 <hr>
-<h3 class="code-line" data-line-start=123 data-line-end=124><a id="Tenant_123"></a>Tenant:</h3>
+<h3 class="code-line" data-line-start=137 data-line-end=138><a id="Tenant_137"></a>Tenant:</h3>
 <table class="table table-striped table-bordered">
 <thead>
 <tr>
@@ -360,7 +422,7 @@
 </tbody>
 </table>
 <hr>
-<h3 class="code-line" data-line-start=141 data-line-end=142><a id="Lease_141"></a>Lease:</h3>
+<h3 class="code-line" data-line-start=155 data-line-end=156><a id="Lease_155"></a>Lease:</h3>
 <table class="table table-striped table-bordered">
 <thead>
 <tr>
@@ -398,7 +460,7 @@
 </tbody>
 </table>
 <hr>
-<h3 class="code-line" data-line-start=151 data-line-end=152><a id="Account_Information_151"></a>Account_Information:</h3>
+<h3 class="code-line" data-line-start=165 data-line-end=166><a id="Account_Information_165"></a>Account_Information:</h3>
 <table class="table table-striped table-bordered">
 <thead>
 <tr>
@@ -442,7 +504,7 @@
 </tbody>
 </table>
 <hr>
-<h3 class="code-line" data-line-start=162 data-line-end=163><a id="Bill_162"></a>Bill:</h3>
+<h3 class="code-line" data-line-start=176 data-line-end=177><a id="Bill_176"></a>Bill:</h3>
 <table class="table table-striped table-bordered">
 <thead>
 <tr>
@@ -498,7 +560,7 @@
 </tbody>
 </table>
 <hr>
-<h3 class="code-line" data-line-start=175 data-line-end=176><a id="Work_Order_175"></a>Work_Order:</h3>
+<h3 class="code-line" data-line-start=189 data-line-end=190><a id="Work_Order_189"></a>Work_Order:</h3>
 <table class="table table-striped table-bordered">
 <thead>
 <tr>
@@ -578,7 +640,7 @@
 </tbody>
 </table>
 <hr>
-<h3 class="code-line" data-line-start=192 data-line-end=193><a id="Category_192"></a>Category:</h3>
+<h3 class="code-line" data-line-start=206 data-line-end=207><a id="Category_206"></a>Category:</h3>
 <table class="table table-striped table-bordered">
 <thead>
 <tr>
@@ -610,7 +672,7 @@
 </tbody>
 </table>
 <hr>
-<h3 class="code-line" data-line-start=201 data-line-end=202><a id="Feedback_201"></a>Feedback:</h3>
+<h3 class="code-line" data-line-start=215 data-line-end=216><a id="Feedback_215"></a>Feedback:</h3>
 <table class="table table-striped table-bordered">
 <thead>
 <tr>
@@ -648,7 +710,7 @@
 </tbody>
 </table>
 <hr>
-<h3 class="code-line" data-line-start=211 data-line-end=212><a id="Service_Provider_211"></a>Service_Provider:</h3>
+<h3 class="code-line" data-line-start=225 data-line-end=226><a id="Service_Provider_225"></a>Service_Provider:</h3>
 <table class="table table-striped table-bordered">
 <thead>
 <tr>
@@ -669,13 +731,13 @@
 <td>Service_Provider_Last_name</td>
 <td>VARCHAR</td>
 <td>NOT NULL</td>
-<td>PK</td>
+<td></td>
 </tr>
 <tr>
 <td>Service_Provider_First_name</td>
 <td>VARCHAR</td>
 <td>NOT NULL</td>
-<td>PK</td>
+<td></td>
 </tr>
 <tr>
 <td>Category_id</td>
@@ -701,9 +763,47 @@
 <td>NOT NULL</td>
 <td></td>
 </tr>
+<tr>
+<td>Department_Id</td>
+<td>INT</td>
+<td>NOT NULL</td>
+<td>FK</td>
+</tr>
 </tbody>
 </table>
 <hr>
-<h3 class="code-line" data-line-start=223 data-line-end=224><a id="Reference_223"></a>Reference:</h3>
-<p class="has-line-data" data-line-start="224" data-line-end="225"><a href="https://mysql.tutorials24x7.com/blog/guide-to-design-database-for-rbac-in-mysql">Sample Role-Based Access Control System</a></p>
+<h3 class="code-line" data-line-start=239 data-line-end=240><a id="Department_239"></a>Department:</h3>
+<table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th>Column</th>
+<th>Type</th>
+<th>Constraint</th>
+<th>key</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Department_id</td>
+<td>INT</td>
+<td>NOT NULL</td>
+<td>PK</td>
+</tr>
+<tr>
+<td>Department_name</td>
+<td>VARCHAR</td>
+<td>NOT NULL</td>
+<td></td>
+</tr>
+<tr>
+<td>Department_description</td>
+<td>VARCHAR</td>
+<td>NOT NULL</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 class="code-line" data-line-start=248 data-line-end=249><a id="Reference_248"></a>Reference:</h3>
+<p class="has-line-data" data-line-start="249" data-line-end="250"><a href="https://mysql.tutorials24x7.com/blog/guide-to-design-database-for-rbac-in-mysql">Sample Role-Based Access Control System</a></p>
 </body></html>
