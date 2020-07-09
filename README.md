@@ -255,7 +255,7 @@ Entities need to be considered:
 ### Service_Provider:
 | Column | Type | Constraint | key|
 |---|---|---|---| 
-| Email | VARCHAR | UNIQUE | PK |
+| Service_provider_email | VARCHAR | UNIQUE | PK |
 | Service_Provider_Full_name | VARCHAR | NOT NULL | |
 | Category_id | INT | NOT NULL | FK |
 | Password | BINARY(16) | NOT NULL ||
