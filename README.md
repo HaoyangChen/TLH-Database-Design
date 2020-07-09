@@ -183,7 +183,6 @@ Entities need to be considered:
 | Date_created | DATE | NOT NULL||
 | Photo| BLOB | NOT NULL||
 | Account_Balance | FLOAT | NULL ||
-| Lease_id | INT | NOT NULL | FK |
 
 ----------------------
 
@@ -195,6 +194,7 @@ Entities need to be considered:
 | Start_date | DATE | NOT NULL ||
 | End_date | DATE | NOT NULL ||
 | Move_in_Date | Date | NOT NULL||
+| Email | VARCHAR | UNIQUE | FK |
 
 ------------------------
 
