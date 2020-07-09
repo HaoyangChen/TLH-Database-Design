@@ -120,8 +120,10 @@ Entities need to be considered:
 | Floor | INT | NOT NULL ||
 | Bathroom | BOOLEAN | NOT NULL ||
 | SQFT | INT | NOT NULL ||
+| Property_id | INT | UNIQUE | FK|
 | Room_type_id | INT | NOT NULL | FK|
 | Laundry_type_id | INT | NOT NULL | FK|
+
 ------------------------
 ### Room_type: 
 | Column | Type | Constraint | key|
@@ -173,17 +175,15 @@ Entities need to be considered:
 ### Tenant: 
 | Column | Type | Constraint | key|
 |---|---|---|---|
-| Tenant_id| INT | UNIQUE | PK|
-| First_name | VARCHAR |NOT NULL||
-| Last_name | VARCHAR | NOT NULL||
+| Email | VARCHAR | UNIQUE | PK |
+| Full_name | VARCHAR |NOT NULL||
 | Identification | INT | NOT NULL ||
-| Date_of_Birth | DATE  | NOT NULL ||
-| Email | VARCHAR | NOT NULL ||
 | Phone_Number | INT | NOT NULL ||
-| Room_Id | INT | NOT NULL | FK |
+| Password | BINARY(16) | NOT NULL ||
+| Date_created | DATE | NOT NULL||
+| Photo| BLOB | NOT NULL||
+| Account_Balance | FLOAT | NULL ||
 | Lease_id | INT | NOT NULL | FK |
-| Account_id | INT | NOT NULL | FK |
-| Bill_id | INT | NOT NULL | FK |
 
 ----------------------
 
@@ -191,23 +191,13 @@ Entities need to be considered:
 | Column | Type | Constraint | key|
 |---|---|---|---|
 | Lease_id| INT | UNIQUE | PK|
+| Room_Id | INT | NOT NULL | FK |
 | Start_date | DATE | NOT NULL ||
 | End_date | DATE | NOT NULL ||
 | Move_in_Date | Date | NOT NULL||
 
 ------------------------
 
-### Account_Information:
-| Column | Type | Constraint | key|
-|---|---|---|---|
-|Accound_id | INT | UNIQUE | PK |
-|Password | BINARY(16) | NOT NULL ||
-|Date_created | DATE | NOT NULL||
-|Photo| BLOB | NOT NULL||
-|Email|VARCHAR|NOT NULL||
-|Account_Balance | FLOAT | NULL ||
-
----------------------
 
 ### Bill:
 | Column | Type | Constraint | key|
@@ -219,6 +209,7 @@ Entities need to be considered:
 | Bill_description | VARCHAR | NOT NULL ||
 | Auto_payment | BOOLEAN | NOT NULL ||
 | Paid| Boolean | NOT NULL||
+| Lease_id| INT | UNIQUE | FK|
 
 ----------------------
 
@@ -264,12 +255,12 @@ Entities need to be considered:
 ### Service_Provider:
 | Column | Type | Constraint | key|
 |---|---|---|---| 
-| Service_Provider_id | INT | UNIQUE | PK |
-| Service_Provider_Last_name | VARCHAR | NOT NULL | |
-| Service_Provider_First_name | VARCHAR | NOT NULL | |
+| Email | VARCHAR | UNIQUE | PK |
+| Service_Provider_Full_name | VARCHAR | NOT NULL | |
 | Category_id | INT | NOT NULL | FK |
-| Date_of_Birth | DATE  | NOT NULL ||
-| Email | VARCHAR | NOT NULL ||
+| Password | BINARY(16) | NOT NULL ||
+| Date_created | DATE | NOT NULL||
+| Photo| BLOB | NOT NULL||
 | Phone_Number | INT | NOT NULL ||
 | Department_Id| INT | NOT NULL|FK|
 
