@@ -52,7 +52,7 @@ Entities need to be considered:
 -  1 account information is associated with only 1 tenant
 -  1 tenant has only one account information
 -  1 tenant pays 1 or more bills
--  1 bill is paid by 1 or more tenant
+-  1 bill is paid by 1 tenant
 -  1 tenant has 1 or more lease
 -  1 lease is completed by 1 or more tenants
 -  1 tenant lives in only 1 property
@@ -176,25 +176,29 @@ Entities need to be considered:
 | Column | Type | Constraint | key|
 |---|---|---|---|
 | Email | VARCHAR | UNIQUE | PK |
-| Full_name | VARCHAR |NOT NULL||
+| Full_name | VARCHAR | NOT NULL ||
+| Nick_name | VARCHAR | NOT NULL ||
+| Pin_Code | INT | NOT NULL || 
 | Identification | INT | NOT NULL ||
+| Date_of_Birth | DATE | NOT NULL ||
 | Phone_Number | INT | NOT NULL ||
 | Password | BINARY(16) | NOT NULL ||
 | Date_created | DATE | NOT NULL||
 | Photo| BLOB | NOT NULL||
-| Account_Balance | FLOAT | NULL ||
+| Current_Balance | FLOAT | NULL ||
+| Lease_id| VARCHAR | UNIQUE | FK|
 
 ----------------------
 
 ### Lease: 
 | Column | Type | Constraint | key|
 |---|---|---|---|
-| Lease_id| INT | UNIQUE | PK|
+| Lease_id| VARCHAR | UNIQUE | PK|
 | Room_Id | INT | NOT NULL | FK |
 | Start_date | DATE | NOT NULL ||
 | End_date | DATE | NOT NULL ||
 | Move_in_Date | Date | NOT NULL||
-| Email | VARCHAR | UNIQUE | FK |
+| Rent | FLOAT | NOT NULL | |
 
 ------------------------
 
@@ -209,7 +213,7 @@ Entities need to be considered:
 | Bill_description | VARCHAR | NOT NULL ||
 | Auto_payment | BOOLEAN | NOT NULL ||
 | Paid| Boolean | NOT NULL||
-| Lease_id| INT | UNIQUE | FK|
+| Lease_id| VARCHAR | UNIQUE | FK|
 
 ----------------------
 
