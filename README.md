@@ -181,7 +181,7 @@ Entities need to be considered:
 | pin_Code | INT | NOT NULL || 
 | identification | INT | NOT NULL ||
 | phone_number | INT | NOT NULL ||
-| password | BINARY(16) | NOT NULL ||
+| account_password | BINARY(16) | NOT NULL ||
 | date_created | DATE | NOT NULL||
 | photo| BLOB | NOT NULL||
 | current_Balance | FLOAT | NULL ||
