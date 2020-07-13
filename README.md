@@ -175,29 +175,29 @@ Entities need to be considered:
 ### Tenant: 
 | Column | Type | Constraint | key|
 |---|---|---|---|
-| Email | VARCHAR | UNIQUE | PK |
-| Full_name | VARCHAR | NOT NULL ||
-| Nick_name | VARCHAR | NOT NULL ||
-| Pin_Code | INT | NOT NULL || 
-| Identification | INT | NOT NULL ||
-| Phone_Number | INT | NOT NULL ||
-| Password | BINARY(16) | NOT NULL ||
-| Date_created | DATE | NOT NULL||
-| Photo| BLOB | NOT NULL||
-| Current_Balance | FLOAT | NULL ||
-| Lease_id| VARCHAR | UNIQUE | FK|
+| email | VARCHAR | UNIQUE | PK |
+| full_name | VARCHAR | NOT NULL ||
+| nick_name | VARCHAR | NOT NULL ||
+| pin_Code | INT | NOT NULL || 
+| identification | INT | NOT NULL ||
+| phone_number | INT | NOT NULL ||
+| password | BINARY(16) | NOT NULL ||
+| date_created | DATE | NOT NULL||
+| photo| BLOB | NOT NULL||
+| current_Balance | FLOAT | NULL ||
+| lease_id| VARCHAR | UNIQUE | FK|
 
 ----------------------
 
 ### Lease: 
 | Column | Type | Constraint | key|
 |---|---|---|---|
-| Lease_id| VARCHAR | UNIQUE | PK|
-| Room_Id | INT | NOT NULL | FK |
-| Start_date | DATE | NOT NULL ||
-| End_date | DATE | NOT NULL ||
-| Move_in_Date | Date | NOT NULL||
-| Rent | FLOAT | NOT NULL | |
+| lease_id| VARCHAR | UNIQUE | PK|
+| room_Id | INT | NOT NULL | FK |
+| start_date | DATE | NOT NULL ||
+| end_date | DATE | NOT NULL ||
+| move_in_Date | Date | NOT NULL||
+| rent | FLOAT | NOT NULL | |
 
 ------------------------
 
