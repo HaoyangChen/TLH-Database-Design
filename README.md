@@ -81,11 +81,11 @@ Entities need to be considered:
 ### Property: 
 | Column | Type | Constraint | key|
 |---|---|---|---|
-| Property_id | INT | UNIQUE | PK|
-| Property_name | VARCHAR | NOT NULL ||
-| Property_description | VARCHAR | NOT NULL ||
-| Community_id | INT | NOT NULL | FK |
-| Property_location | INT | NOT NULL |FK|
+| property_id | INT | UNIQUE | PK|
+| property_name | VARCHAR | NOT NULL ||
+| property_description | VARCHAR | NOT NULL ||
+| community_id | INT | NOT NULL | FK |
+| property_location | INT | NOT NULL |FK|
 
 --------------------------------
 
