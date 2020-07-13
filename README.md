@@ -105,24 +105,24 @@ Entities need to be considered:
 ### Room: 
 | Column | Type | Constraint | key|
 |---|---|---|---|
-| Room_id | INT | UNIQUE | PK|
-| Room_number | INT | NOT NULL ||
-| Vacancy | BOOLEAN | NOT NULL ||
-| Resident_Number | INT | NOT NULL ||
-| Parking_spot | INT | NOT NULL ||
-| Pet_friendly | BOOLEAN | NOT NULL ||
-| Fitness | BOOLEAN | NOT NULL ||
-| Rooftop_access | BOOLEAN | NOT NULL ||
-| Share_space_tidy_up | BOOLEAN | NOT NULL ||
-| Additional_feature | VARCHAR |  ||
-| Kitchen | BOOLEAN | NOT NULL ||
-| Furnished | BOOLEAN | NOT NULL ||
-| Floor | INT | NOT NULL ||
-| Bathroom | BOOLEAN | NOT NULL ||
-| SQFT | INT | NOT NULL ||
-| Property_id | INT | UNIQUE | FK|
-| Room_type_id | INT | NOT NULL | FK|
-| Laundry_type_id | INT | NOT NULL | FK|
+| room_id | INT | UNIQUE | PK|
+| room_number | INT | NOT NULL ||
+| vacancy | BOOLEAN | NOT NULL ||
+| resident_number | INT | NOT NULL ||
+| parking_spot | INT | NOT NULL ||
+| pet_friendly | BOOLEAN | NOT NULL ||
+| fitness | BOOLEAN | NOT NULL ||
+| rooftop_access | BOOLEAN | NOT NULL ||
+| share_space_tidy_up | BOOLEAN | NOT NULL ||
+| additional_feature | VARCHAR |  ||
+| kitchen | BOOLEAN | NOT NULL ||
+| furnished | BOOLEAN | NOT NULL ||
+| floor | INT | NOT NULL ||
+| bathroom | BOOLEAN | NOT NULL ||
+| sqft | INT | NOT NULL ||
+| property_id | INT | UNIQUE | FK|
+| room_type_id | INT | NOT NULL | FK|
+| laundry_type_id | INT | NOT NULL | FK|
 
 ------------------------
 ### Room_type: 
@@ -184,7 +184,7 @@ Entities need to be considered:
 | account_password | BINARY(16) | NOT NULL ||
 | date_created | DATE | NOT NULL||
 | photo| BLOB | NOT NULL||
-| current_Balance | FLOAT | NULL ||
+| current_Balance | DECIMAL | NULL ||
 | lease_id| VARCHAR | UNIQUE | FK|
 
 ----------------------
@@ -197,7 +197,7 @@ Entities need to be considered:
 | start_date | DATE | NOT NULL ||
 | end_date | DATE | NOT NULL ||
 | move_in_Date | Date | NOT NULL||
-| rent | FLOAT | NOT NULL | |
+| rent | DECIMAL | NOT NULL | |
 
 ------------------------
 
