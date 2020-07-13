@@ -180,7 +180,6 @@ Entities need to be considered:
 | Nick_name | VARCHAR | NOT NULL ||
 | Pin_Code | INT | NOT NULL || 
 | Identification | INT | NOT NULL ||
-| Date_of_Birth | DATE | NOT NULL ||
 | Phone_Number | INT | NOT NULL ||
 | Password | BINARY(16) | NOT NULL ||
 | Date_created | DATE | NOT NULL||
