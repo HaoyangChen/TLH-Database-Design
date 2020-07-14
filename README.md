@@ -230,7 +230,7 @@ Entities need to be considered:
 | Work_Status | BOOLEAN | NOT NULL ||
 | Feedback_id | INT | NOT NULL | FK |
 | Service_Provider_id | INT | NOT NULL | FK |
-| Tenant_id| INT | NOT NULL| FK |
+| email| INT | NOT NULL| FK |
 | Time_placed|DATETIME| NOT NULL ||
 | Status_Changed_Time|DATETIME| NOT NULL ||
 
