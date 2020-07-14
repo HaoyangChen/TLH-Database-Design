@@ -205,14 +205,14 @@ Entities need to be considered:
 ### Bill:
 | Column | Type | Constraint | key|
 |---|---|---|---|
-| Bill_id | INT | UNIQUE | PK |
-| Bill_name| VARCHAR | VARCHAR ||
-| Bill_date | DATE | NOT NULL||
-| Bill_amount| FLOAT | NOT NULL ||
-| Bill_description | VARCHAR | NOT NULL ||
-| Auto_payment | BOOLEAN | NOT NULL ||
-| Paid| Boolean | NOT NULL||
-| Lease_id| VARCHAR | UNIQUE | FK|
+| bill_id | INT | UNIQUE | PK |
+| bill_name| VARCHAR | VARCHAR ||
+| bill_date | DATE | NOT NULL||
+| bill_amount| FLOAT | NOT NULL ||
+| bill_description | VARCHAR | NOT NULL ||
+| auto_payment | BOOLEAN | NOT NULL ||
+| paid| Boolean | NOT NULL||
+| lease_id| VARCHAR | UNIQUE | FK|
 
 ----------------------
 
