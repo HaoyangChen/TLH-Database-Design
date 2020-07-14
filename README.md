@@ -92,14 +92,14 @@ Entities need to be considered:
 ### Location: 
 | Column | Type | Constraint | key|
 |---|---|---|---|
-| Location_id | INT | UNIQUE | PK|
-| Location_name | VARCHAR | NOT NULL ||
-| Location_description | VARCHAR | NOT NULL ||
-| House_Number | INT | NOT NULL | |
-| Street_Name | VARCHAR | NOT NULL | |
-| City | VARCHAR | NOT NULL ||
-| STATE | VARCHAR | NOT NULL ||
-| ZIP_code | INT | NOT NULL ||
+| location_id | INT | UNIQUE | PK|
+| location_name | VARCHAR | NOT NULL ||
+| location_description | VARCHAR | NOT NULL ||
+| house_number | INT | NOT NULL | |
+| street_name | VARCHAR | NOT NULL | |
+| city | VARCHAR | NOT NULL ||
+| state | VARCHAR | NOT NULL ||
+| zip_code | INT | NOT NULL ||
 
 --------------------
 ### Room: 
