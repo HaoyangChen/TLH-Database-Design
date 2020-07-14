@@ -128,9 +128,9 @@ Entities need to be considered:
 ### Room_type: 
 | Column | Type | Constraint | key|
 |---|---|---|---|
-| Room_type_id | INT | NOT NULL |PK|
-| Room_type_name | VARCHAR | NOT NULL ||
-| Room_type_description | VARCHAR | NOT NULL ||
+| room_type_id | INT | NOT NULL |PK|
+| room_type_name | VARCHAR | NOT NULL ||
+| room_type_description | VARCHAR | NOT NULL ||
 
 ------------------------
 ### Laundry_type: 
