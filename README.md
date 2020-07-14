@@ -145,9 +145,9 @@ Entities need to be considered:
 ### Community: 
 | Column | Type | Constraint | key|
 |---|---|---|---|
-| Community_id | INT | UNIQUE | PK|
-| Community_name | VARCHAR | NOT NULL||
-| Community_description | VARCHAR | NOT NULL||
+| community_id | INT | UNIQUE | PK|
+| community_name | VARCHAR | NOT NULL||
+| community_description | VARCHAR | NOT NULL||
 
 ------------------------------
 
