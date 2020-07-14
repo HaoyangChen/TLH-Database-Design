@@ -136,9 +136,9 @@ Entities need to be considered:
 ### Laundry_type: 
 | Column | Type | Constraint | key|
 |---|---|---|---|
-| Laundry_type_id | INT | NOT NULL |PK|
-| Laundry_type_name | VARCHAR | NOT NULL ||
-| Laundry_type_description | VARCHAR | NOT NULL ||
+| laundry_type_id | INT | NOT NULL |PK|
+| laundry_type_name | VARCHAR | NOT NULL ||
+| laundry_type_description | VARCHAR | NOT NULL ||
 
 ------------------------
 
