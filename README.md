@@ -97,7 +97,7 @@ Entities need to be considered:
 | auto_payment| TINYINT(1)| NOT NULL | | an arrangement with a creditor that allow creditor to withdraw money from uses'card |
 | card_number| INT(11)| NULL | | user's card number |
 | cardholder_name| VARCHAR(255)| NULL | | user's carholder name |
-| exp_date| DATE| NULL | |user's card experation date |
+| exp_date| DATE| NULL | |user's card expiration date |
 | zipcode| INT(11)| NULL | | user's card zip code |
 | lease_id| VARCHAR(255) | NULL | | user's lease id (all) |
 | property_id| VARCHAR(50) | NOT NULL | | user's current property id |
