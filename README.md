@@ -1,16 +1,16 @@
 # Databse Design - The Living Hood App
-### Author: Haoyang (Eric) Chen, Yutong Wei
+### Author: Haoyang (Eric) Chen, Yutong Wei,Lizi Xian
 ### [Live Site](https://haoyangchen.github.io/TLH-Database-Design/)
 
 ## 1: Defining the purpose of the databse:
 Residential Services Tracking and Management
 
 ## 2: Listing down major functional requirements: 
-- The application can be used by current tenants, administrators, and service providers
-- Users should be able to sign up with email address and selected property
+- The application can be used by current tenants, maintenances and cleaning staffs
+- Users should be able to sign up with email address using a pin code send by adminstrators.
 - Users should be able to reset password with their email account
 - Administrators/IT can update and delete information
-- Tenants should be able to view the account balance and detailed statement of each month
+- The database will retain all the billing details within 12 months.
 - Tenants should be able to report maintainence to the system with the information of Category, Description, Photos, Time Duration Preference, and Property Access Information. 
 - Tenants are able to view announcement for the community and events
 - Different service providers in charge of different category or categories
@@ -78,6 +78,32 @@ Entities need to be considered:
 
 ## 5: Deciding the columns, keys, and constraints
 
+
+### Tenant: 
+| Column | Type | Constraint | key| Description 
+|---|---|---|---|
+| email | VARCHAR(254) |NOT NULL| PK | users sign up and sign in by emails ||
+| last_name | VARCHAR(255) | NOT NULL | users's last name ||
+| first_name | VARCHAR(255) | NOT NULL | user's first name ||
+| nick_name | VARCHAR(255) | NOT NULL | user's nick name ||
+| account_password | VARCHAR(255) | NOT NULL || user's password for the application logging ||
+| identity | VARCHAR(50) |NULL |  user's identification number (e.g. ssn) ||
+| phone_number | INT | NULL | user's phone number ||
+| registeration_date | DATE | NULL| registeration date of a application account ||
+| date_created | DATE | NOT NULL|| 
+| monthly_rent | DECIMAL(7,2) | NULL| a montly rent tenants need to pay for their current units||
+| current_Balance | DECIMAL(7,2) | NOT NULL | the amounts of money that in user's application account ||
+| auto_payment| TINYINT(1)| NOT NULL | an arrangement with a creditor that allow creditor to withdraw money from uses'card ||
+| card_number| INT(11)| NULL | user's card number ||
+| cardholder_name| VARCHAR(255)| NULL | user's carholder name ||
+| exp_date| DATE| NULL || user's card experation date ||
+| zipcode| INT(11)| NULL || user's card zip code ||
+| lease_id| VARCHAR(255) | NULL || user's lease id (all) ||
+| property_id| VARCHAR(50) | NOT NULL || user's current property id ||
+| unit| VARCHAR(50) | NULL || user's current unit number ||
+| notification_id| VARCHAR(255) | NULL || id of notification messages ||
+
+--------------------------------
 ### Property: 
 | Column | Type | Constraint | key|
 |---|---|---|---|
@@ -172,22 +198,6 @@ Entities need to be considered:
 | Community_id | INT | UNIQUE | FK|
 
 -----------------------
-### Tenant: 
-| Column | Type | Constraint | key|
-|---|---|---|---|
-| email | VARCHAR | UNIQUE | PK |
-| full_name | VARCHAR | NOT NULL ||
-| nick_name | VARCHAR | NOT NULL ||
-| pin_Code | INT | NOT NULL || 
-| identification | INT | NOT NULL ||
-| phone_number | INT | NOT NULL ||
-| account_password | BINARY(16) | NOT NULL ||
-| date_created | DATE | NOT NULL||
-| photo| BLOB | NOT NULL||
-| current_Balance | DECIMAL | NULL ||
-| lease_id| VARCHAR | UNIQUE | FK|
-
-----------------------
 
 ### Lease: 
 | Column | Type | Constraint | key|
