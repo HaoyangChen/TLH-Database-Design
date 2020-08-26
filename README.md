@@ -86,8 +86,8 @@ Entities need to be considered:
 | last_name | VARCHAR(255) | NOT NULL | users's last name |
 | first_name | VARCHAR(255) | NOT NULL | user's first name |
 | nick_name | VARCHAR(255) | NOT NULL | user's nick name |
-| account_password | VARCHAR(255) | NOT NULL || user's password for the application logging |
-| identity | VARCHAR(50) |NULL |  user's identification number (e.g. ssn) |
+| account_password | VARCHAR(255) | NOT NULL | user's password for the application logging |
+| identity | VARCHAR(50) |NULL | user's identification number (e.g. ssn) |
 | phone_number | INT | NULL | user's phone number |
 | registeration_date | DATE | NULL| registeration date of a application account |
 | date_created | DATE | NOT NULL|
