@@ -90,7 +90,7 @@ Entities need to be considered:
 | identity | VARCHAR(50) |NULL ||user's identification number (e.g. ssn) |
 | phone_number | INT | NULL || user's phone number |
 | registeration_date | DATE | NULL|| registeration date of a application account |
-| date_created | DATE | NOT NULL|||
+| date_created | DATE | NOT NULL||||
 | monthly_rent | DECIMAL(7,2) | NULL|| a montly rent tenants need to pay for their current units|
 | current_Balance | DECIMAL(7,2) | NOT NULL || the amounts of money that in user's application account |
 | auto_payment| TINYINT(1)| NOT NULL || an arrangement with a creditor that allow creditor to withdraw money from uses'card |
