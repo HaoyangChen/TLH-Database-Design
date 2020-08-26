@@ -80,7 +80,7 @@ Entities need to be considered:
 
 
 ### Tenant: 
-| Column | Type | Constraint | key| Description |
+| Column | Type | Constraint | key| Description|
 |---|---|---|---|
 | email | VARCHAR(254) |NOT NULL| PK | users sign up and sign in by emails |
 | last_name | VARCHAR(255) | NOT NULL | users's last name |
@@ -105,6 +105,7 @@ Entities need to be considered:
 
 --------------------------------
 ### Property: 
+
 | Column | Type | Constraint | key|
 |---|---|---|---|
 | property_id | INT | UNIQUE | PK|
