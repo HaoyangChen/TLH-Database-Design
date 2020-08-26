@@ -83,25 +83,25 @@ Entities need to be considered:
 | Column | Type | Constraint | key| Description|
 |---|---|---|---|
 | email | VARCHAR(254) |NOT NULL| PK | users sign up and sign in by emails |
-| last_name | VARCHAR(255) | NOT NULL | users's last name |
-| first_name | VARCHAR(255) | NOT NULL | user's first name |
-| nick_name | VARCHAR(255) | NOT NULL | user's nick name |
-| account_password | VARCHAR(255) | NOT NULL | user's password for the application logging |
-| identity | VARCHAR(50) |NULL | user's identification number (e.g. ssn) |
-| phone_number | INT | NULL | user's phone number |
-| registeration_date | DATE | NULL| registeration date of a application account |
-| date_created | DATE | NOT NULL|
-| monthly_rent | DECIMAL(7,2) | NULL| a montly rent tenants need to pay for their current units|
-| current_Balance | DECIMAL(7,2) | NOT NULL | the amounts of money that in user's application account |
-| auto_payment| TINYINT(1)| NOT NULL | an arrangement with a creditor that allow creditor to withdraw money from uses'card |
-| card_number| INT(11)| NULL | user's card number |
-| cardholder_name| VARCHAR(255)| NULL | user's carholder name |
-| exp_date| DATE| NULL | user's card experation date |
-| zipcode| INT(11)| NULL | user's card zip code |
-| lease_id| VARCHAR(255) | NULL | user's lease id (all) |
-| property_id| VARCHAR(50) | NOT NULL | user's current property id |
-| unit| VARCHAR(50) | NULL | user's current unit number |
-| notification_id| VARCHAR(255) | NULL | id of notification messages |
+| last_name | VARCHAR(255) | NOT NULL || users's last name |
+| first_name | VARCHAR(255) | NOT NULL || user's first name |
+| nick_name | VARCHAR(255) | NOT NULL || user's nick name |
+| account_password | VARCHAR(255) | NOT NULL || user's password for the application logging |
+| identity | VARCHAR(50) |NULL ||user's identification number (e.g. ssn) |
+| phone_number | INT | NULL || user's phone number |
+| registeration_date | DATE | NULL|| registeration date of a application account |
+| date_created | DATE | NOT NULL|||
+| monthly_rent | DECIMAL(7,2) | NULL|| a montly rent tenants need to pay for their current units|
+| current_Balance | DECIMAL(7,2) | NOT NULL || the amounts of money that in user's application account |
+| auto_payment| TINYINT(1)| NOT NULL || an arrangement with a creditor that allow creditor to withdraw money from uses'card |
+| card_number| INT(11)| NULL || user's card number |
+| cardholder_name| VARCHAR(255)| NULL || user's carholder name |
+| exp_date| DATE| NULL ||user's card experation date |
+| zipcode| INT(11)| NULL || user's card zip code |
+| lease_id| VARCHAR(255) | NULL || user's lease id (all) |
+| property_id| VARCHAR(50) | NOT NULL || user's current property id |
+| unit| VARCHAR(50) | NULL || user's current unit number |
+| notification_id| VARCHAR(255) | NULL || id of notification messages |
 
 --------------------------------
 ### Property: 
