@@ -86,7 +86,7 @@ Entities need to be considered:
 | first_name | VARCHAR(255) | NOT NULL | | a tenant's first name |
 | property_id| VARCHAR(50) | NOT NULL | | a tenant's current property id |
 | identity | VARCHAR(50) | NULL | | a tenant's identification number (e.g. ssn) |
-| email | VARCHAR(254) |NOT NULL| PK | tenants sign up and sign in by emails |
+| email | VARCHAR(254) |NOT NULL| | tenants sign up and sign in by emails |
 | phone_number | INT | NULL || a tenant's phone number |
 | lease_start_date | DATE | NULL || a start date of tenant's lease agreement |
 | lease_end_date | DATE | NULL || an end date of tenant's lease agreement |
