@@ -82,18 +82,18 @@ Entities need to be considered:
 | Column | Type | Constraint | key| Description|
 |---|---|---|---|---|
 | pin_code | INT | NOT NULL | PK| a 6 digits long code given by admin to allow tenants to register applcation accounts|
-| last_name | VARCHAR(255) | NOT NULL | | a tenant's last name |
-| first_name | VARCHAR(255) | NOT NULL | | a tenant's first name |
-| property_id| VARCHAR(50) | NOT NULL | | a tenant's current property id |
-| identity | VARCHAR(50) | NULL | | a tenant's identification number (e.g. ssn) |
+| last_name | VARCHAR(255) | NOT NULL | | tenants' last name |
+| first_name | VARCHAR(255) | NOT NULL | | tenants' first name |
+| property_id| VARCHAR(50) | NOT NULL | | tenants' current property id |
+| identity | VARCHAR(50) | NULL | | tenants' identification number (e.g. ssn) |
 | email | VARCHAR(254) |NOT NULL| | tenants sign up and sign in by emails |
-| phone_number | INT | NULL || a tenant's phone number |
+| phone_number | INT | NULL || tenants' phone number |
 | lease_start_date | DATE | NULL || a start date of tenant's lease agreement |
 | lease_end_date | DATE | NULL || an end date of tenant's lease agreement |
-| lease_contract | VARCHAR(255) | NULL || tenant's lease agrrement sigend contract |
-| unit| VARCHAR(50) | NULL | | a tenant's current unit number |
-| monthly_rent | DECIMAL(7,2) | NULL | | a montly rent tenants need to pay for their current units |
-| property_name| VARCHAR(100) | NULL | | a tenant's current property name |
+| lease_contract | VARCHAR(255) | NULL || tenants' lease agrrement sigend contract |
+| unit| VARCHAR(50) | NULL | | tenants' current unit number |
+| monthly_rent | DECIMAL(7,2) | NULL | | montly rent tenants need to pay for their current units |
+| property_name| VARCHAR(100) | NULL | | tenants' current property name |
 
 --------------------------------
 
@@ -103,23 +103,23 @@ Entities need to be considered:
 | Column | Type | Constraint | key| Description|
 |---|---|---|---|---|
 | email | VARCHAR(254) |NOT NULL| PK | tenants sign up and sign in by emails |
-| last_name | VARCHAR(255) | NOT NULL | | a tenant's last name |
-| first_name | VARCHAR(255) | NOT NULL | | a tenant's first name |
-| nick_name | VARCHAR(255) | NOT NULL | | a tenant's nick name |
-| account_password | VARCHAR(255) | NOT NULL || a tenant's password for the application logging |
-| identity | VARCHAR(50) | NULL | | a tenant's identification number (e.g. ssn) |
-| phone_number | INT | NULL || a tenant's phone number |
+| last_name | VARCHAR(255) | NOT NULL | | tenants' last name |
+| first_name | VARCHAR(255) | NOT NULL | | tenants' first name |
+| nick_name | VARCHAR(255) | NOT NULL | | tenants' nick name |
+| account_password | VARCHAR(255) | NOT NULL || tenants' password for the application logging |
+| identity | VARCHAR(50) | NULL | | tenants' identification number (e.g. ssn) |
+| phone_number | INT | NULL || tenants' phone number |
 | date_created | DATE | NOT NULL| |registeration date of a application account|
 | monthly_rent | DECIMAL(7,2) | NULL | | a montly rent tenants need to pay for their current units |
 | current_Balance | DECIMAL(7,2) | NOT NULL | | the amounts of money that in user's application account |
 | auto_payment| TINYINT(1)| NOT NULL | | an arrangement with a creditor that allow creditor to withdraw money from uses'card |
-| card_number| INT(11)| NULL | | a tenant's card number |
-| cardholder_name| VARCHAR(255)| NULL | | a tenant's carholder name |
-| exp_date| DATE| NULL | | a tenant's card expiration date |
-| zipcode| INT(11)| NULL | | a tenant's card zip code |
-| lease_id| VARCHAR(255) | NULL | | a tenant's lease id (all) |
-| property_id| VARCHAR(50) | NOT NULL | | a tenant's current property id |
-| unit| VARCHAR(50) | NULL | | a tenant's current unit number |
+| card_number| INT(11)| NULL | | tenants' card number |
+| cardholder_name| VARCHAR(255)| NULL | | tenants' carholder name |
+| exp_date| DATE| NULL | | tenants' card expiration date |
+| zipcode| INT(11)| NULL | | tenants' card zip code |
+| lease_id| VARCHAR(255) | NULL | | tenants' lease id (all) |
+| property_id| VARCHAR(50) | NOT NULL | | tenants' current property id |
+| unit| VARCHAR(50) | NULL | | tenants' current unit number |
 | notification_id| VARCHAR(255) | NULL | | id of notification messages |
 
 --------------------------------
