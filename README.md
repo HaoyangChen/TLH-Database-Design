@@ -128,11 +128,11 @@ Entities need to be considered:
 ### Billing_detail: 
 | Column | Type | Constraint | key| Description|
 |---|---|---|---|---|
-| id | VARCHAR(50) |NOT NULL| PK | |billing id |
+| id | VARCHAR(50) |NOT NULL| PK | | billing id |
 | description | VARCHAR(50) | NOT NULL | | billing's description |
-| created_date | DATE | NOT NULL | | |created date of the bill |
+| created_date | DATE | NOT NULL | |created date of the bill |
 | amount | DECIMAL(7,2) | NOT NULL | | billing amount |
-| email | VARCHAR(254)) | NOT NULL | | tenants' email|
+| email | VARCHAR(254)) | NOT NULL | | tenants' email |
 
 --------------------------------
 
@@ -141,11 +141,11 @@ Entities need to be considered:
 | Column | Type | Constraint | key| Description|
 |---|---|---|---|---|
 | lease_id| VARCHAR(25) | NOT NULL | PK | lease id |
-| lease_contract | VARCHAR(255) | NOT NULL | |tenants' lease agrrement sigend contract|
-| lease_status | TINYINT(1) | NULL | | a value of zero means the lease is not active. Nonzero value means the lease is active|
-| lease_created_date| DATETIME | NULL| | the date admin register a new tenant to admin system|
-| lease_start_date | DATE | NULL | | the start date of the lease|
-| lease_end_date | DATE | NULL | | the end date of the lease|
+| lease_contract | VARCHAR(255) | NOT NULL ||tenants' lease agrrement sigend contract|
+| lease_status | TINYINT(1) | NULL || a value of zero means the lease is not active. Nonzero value means the lease is active|
+| lease_created_date| DATETIME | NULL|| the date admin register a new tenant into admin system|
+| lease_start_date | DATE | NULL || the start date of the lease|
+| lease_end_date | DATE | NULL || the end date of the lease|
 
 ### Property: 
 
