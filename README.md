@@ -159,15 +159,20 @@ Entities need to be considered:
 | expiration_time| DATETIME | NULL| | a specifica time that a notification would be expired |
 | flag | TINYINT(1) | NULL| | a value of zero means the notification is unread. a value of one means the notification is read |
 
+------------------------------
+
 ### Property: 
 
-| Column | Type | Constraint | key|
-|---|---|---|---|
-| property_id | INT | UNIQUE | PK|
-| property_name | VARCHAR | NOT NULL ||
-| property_description | VARCHAR | NOT NULL ||
-| community_id | INT | NOT NULL | FK |
-| property_location | INT | NOT NULL |FK|
+| Column | Type | Constraint | key| Description|
+|---|---|---|---|---|
+| property_id | VARCHAR(50) | NOT NULL | PK| propert id |
+| property_name | VARCHAR(100) | NOT NULL || property name |
+| state | VARCHAR(20)| NOT NULL || the state of the property |
+| zipcode | INT(11) | NOT NULL || the zipcode of the property |
+| street_name | VARCHAR(255) | NOT NULL || the street name of the property |
+| city | VARCHAR(45) | NOT NULL || the city of the property |
+| total_units | INT(11) | NULL || total number of units in the property |
+
 
 --------------------------------
 
