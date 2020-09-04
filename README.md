@@ -154,10 +154,10 @@ Entities need to be considered:
 |---|---|---|---|---|
 | notification_id | VARCHAR(25) | NOT NULL| PK| notification id |
 | notification_title | VARCHAR(50) | NOT NULL || the title of a notification |
-| notification_description | VARCHAR(255) | | NOT NULL | the description of a notification|
+| notification_description | VARCHAR(255) | NOT NULL | | the description of a notification|
 | notification_time | DATETIME | NOT NULL| | a specific time that a notification would be sent to tenants|
 | expiration_time| DATETIME | NULL| | a specifica time that a notification would be expired |
-| flag | TINYINT(1) | NULL| | a value of zero means the notification is unread. a value of one means the lease is read |
+| flag | TINYINT(1) | NULL| | a value of zero means the notification is unread. a value of one means the notification is read |
 
 ### Property: 
 
