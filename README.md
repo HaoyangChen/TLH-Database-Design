@@ -125,8 +125,16 @@ Entities need to be considered:
 --------------------------------
 
 
+### Billing_detail: 
+| Column | Type | Constraint | key| Description|
+|---|---|---|---|---|
+| id | VARCHAR(50) |NOT NULL| PK | billing id |
+| description | VARCHAR(50) | NOT NULL | | billing's description |
+| created_date | DATE | NOT NULL | | created date of the bill |
+| amount | DECIMAL(7,2) | NOT NULL | | billing amount |
+| email | VARCHAR(254)) | NOT NULL || tenants' email|
 
-### Property: 
+--------------------------------
 
 ### Property: 
 
