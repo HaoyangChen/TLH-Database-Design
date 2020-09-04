@@ -142,10 +142,22 @@ Entities need to be considered:
 |---|---|---|---|---|
 | lease_id| VARCHAR(25) | NOT NULL | PK | lease id |
 | lease_contract | VARCHAR(255) | NOT NULL ||tenants' lease agrrement sigend contract|
-| lease_status | TINYINT(1) | NULL || a value of zero means the lease is not active. Nonzero value means the lease is active|
+| lease_status | TINYINT(1) | NULL || a value of zero means the lease is not active. a value of one means the lease is active|
 | lease_created_date| DATETIME | NULL|| the date admin register a new tenant into admin system|
 | lease_start_date | DATE | NULL || the start date of the lease|
 | lease_end_date | DATE | NULL || the end date of the lease|
+
+------------------------------
+
+### Notification: 
+| Column | Type | Constraint | key| Description|
+|---|---|---|---|---|
+| notification_id | VARCHAR(25) | NOT NULL| PK| notification id |
+| notification_title | VARCHAR(50) | NOT NULL || the title of a notification |
+| notification_description | VARCHAR(255) | | NOT NULL | the description of a notification|
+| notification_time | DATETIME | NOT NULL| | a specific time that a notification would be sent to tenants|
+| expiration_time| DATETIME | NULL| | a specifica time that a notification would be expired |
+| flag | TINYINT(1) | NULL| | a value of zero means the notification is unread. a value of one means the lease is read |
 
 ### Property: 
 
@@ -243,30 +255,12 @@ Entities need to be considered:
 
 -----------------------
 
-### Lease: 
-| Column | Type | Constraint | key|
-|---|---|---|---|
-| lease_id| VARCHAR | UNIQUE | PK|
-| room_Id | INT | NOT NULL | FK |
-| start_date | DATE | NOT NULL ||
-| end_date | DATE | NOT NULL ||
-| move_in_Date | Date | NOT NULL||
-| rent | DECIMAL | NOT NULL | |
+
 
 ------------------------
 
 
-### Bill:
-| Column | Type | Constraint | key|
-|---|---|---|---|
-| bill_id | INT | UNIQUE | PK |
-| bill_name| VARCHAR | VARCHAR ||
-| bill_date | DATE | NOT NULL||
-| bill_amount| FLOAT | NOT NULL ||
-| bill_description | VARCHAR | NOT NULL ||
-| auto_payment | BOOLEAN | NOT NULL ||
-| paid| Boolean | NOT NULL||
-| lease_id| VARCHAR | UNIQUE | FK|
+
 
 ----------------------
 
