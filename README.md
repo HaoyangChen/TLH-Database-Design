@@ -136,6 +136,17 @@ Entities need to be considered:
 
 --------------------------------
 
+
+### Lease: 
+| Column | Type | Constraint | key| Description|
+|---|---|---|---|---|
+| lease_id| VARCHAR(25) | NOT NULL | PK | lease id |
+| lease_contract | VARCHAR(255) | NOT NULL |tenants' lease agrrement sigend contract|
+| lease_status | TINYINT(1) | NULL |a value of zero means the lease is not active. Nonzero value means the lease is active|
+| lease_created_date| DATETIME | NULL| the date admin register a new tenant to admin system|
+| lease_start_date | DATE | NULL | the start date of the lease|
+| lease_end_date | DATE | NULL | the end date of the lease|
+
 ### Property: 
 
 | Column | Type | Constraint | key|
