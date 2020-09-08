@@ -188,7 +188,21 @@ Entities need to be considered:
 --------------------------------
 
 
+### Event: 
+| Column | Type | Constraint | key| Description|
+|---|---|---|---|---|
+| event_id | VARCHAR(50) |  NOT NULL | PK| event id |
+| event_name | VARCHAR(50) | NOT NULL || event name |
+| event_photo | VARCHAR(255) | NULL || event photo |
+| event_start_time | DATETIME | NOT NULL || the start time of the event |
+| event_end_time | DATETIME | NOT NULL || the end time of the event |
+| event_description | VARCHAR(500) | NOT NULL || the description of an event |
+| event_location | VARCHAR(255) | NOT NULL|| a place where an event will be happening |
+| property_id | VARCHAR(50) | NOT NULL |PK| propert id |
+| event_status | TINYINT(1) | NOT NULL||  a value of zero means the event is ongoing. a value of one means the event is expired |
+| participants_counts | INT(11) | NOT NULL | | the number of tenants attending to the event |
 
+-----------------------
 ### Location: 
 | Column | Type | Constraint | key|
 |---|---|---|---|
