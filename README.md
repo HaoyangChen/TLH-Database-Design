@@ -218,7 +218,7 @@ Entities need to be considered:
 | total_available_time | VARCHAR(25)| NULL | | maintenances' total available time |
 | minimum_hour| VARCHAR(25) | NULL| | maintenances'minimum weekly working hours |
 | property_id | VARCHAR(50) | NULL || propert id |
-| category_name| VARCHAR(255) | NULL || service types (there are 9 types maintenance service in total) |
+| category_name| VARCHAR(255) | NULL || service types (there are 9 types maintenance services in total) |
 
 ### Location: 
 | Column | Type | Constraint | key|
