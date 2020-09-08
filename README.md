@@ -173,8 +173,15 @@ Entities need to be considered:
 | city | VARCHAR(45) | NOT NULL || the city of the property |
 | total_units | INT(11) | NULL || total number of units in the property |
 
+------------------------
+### Room_type: 
+| Column | Type | Constraint | key|
+|---|---|---|---|
+| room_type_id | INT | NOT NULL |PK|
+| room_type_name | VARCHAR | NOT NULL ||
+| room_type_description | VARCHAR | NOT NULL ||--------------------------------
 
---------------------------------
+
 
 ### Location: 
 | Column | Type | Constraint | key|
