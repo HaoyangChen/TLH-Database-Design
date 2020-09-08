@@ -203,6 +203,23 @@ Entities need to be considered:
 | participants_counts | INT(11) | NOT NULL | | the number of tenants attending to the event |
 
 -----------------------
+
+### Maintenance:
+| Column | Type | Constraint | key| Description|
+|---|---|---|---|---|
+| maintenance_email | VARCHAR(254) | NOT NULL| PK | maintenances sign up and sign in by emails| 
+| identity | VARCHAR(50) | NULL | | maintenances' identification number (e.g. ssn) |
+| last_name | VARCHAR(255) | NOT NULL | | maintenances' last name |
+| first_name | VARCHAR(255) | NOT NULL | | maintenances' first name |
+| preferred_name| VARCHAR(255) | NOT NULL | | maintenances' preferred name |
+| password | VARCHAR(255) | NOT NULL || maintenances' password for the application logging |
+| phone_number | VARCHAR(11) | NULL ||  maintenances' phone number |
+| availability_setup | MEDIUMTEXT | NULL | | maintenances' weekly availability setup |
+| total_available_time | VARCHAR(25)| NULL | | maintenances' total available time |
+| minimum_hour| VARCHAR(25) | NULL| | maintenances'minimum weekly working hours |
+| property_id | VARCHAR(50) | NULL || propert id |
+| category_name| VARCHAR(255) | NULL || service types (there are 9 types maintenance service in total) |
+
 ### Location: 
 | Column | Type | Constraint | key|
 |---|---|---|---|
@@ -287,7 +304,17 @@ Entities need to be considered:
 
 -----------------------
 
-
+### Service_Provider:
+| Column | Type | Constraint | key|
+|---|---|---|---| 
+| Service_provider_email | VARCHAR | UNIQUE | PK |
+| Service_Provider_Full_name | VARCHAR | NOT NULL | |
+| Category_id | INT | NOT NULL | FK |
+| Password | BINARY(16) | NOT NULL ||
+| Date_created | DATE | NOT NULL||
+| Photo| BLOB | NOT NULL||
+| Phone_Number | INT | NOT NULL ||
+| Department_Id| INT | NOT NULL|FK|
 
 ------------------------
 
