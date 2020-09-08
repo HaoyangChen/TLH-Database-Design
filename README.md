@@ -174,12 +174,18 @@ Entities need to be considered:
 | total_units | INT(11) | NULL || total number of units in the property |
 
 ------------------------
-### Room_type: 
-| Column | Type | Constraint | key|
-|---|---|---|---|
-| room_type_id | INT | NOT NULL |PK|
-| room_type_name | VARCHAR | NOT NULL ||
-| room_type_description | VARCHAR | NOT NULL ||--------------------------------
+### Unit: 
+| Column | Type | Constraint | key| Description|
+|---|---|---|---|---|
+| unit_number | VARCHAR(50) | NOT NULL |PK| unit number |
+| unit_type | VARCHAR(50)| NOT NULL | | the function of units |
+| predefined_rent| DECIMAL(7,2)| NOT NULL ||predefined rent for a sepecific unit |
+| unit_description|VARCHAR(255)| NULL ||the description of a specific unit |
+| lease_id|VARCHAR(25)| NULL ||lease id |
+| property_id | VARCHAR(50) | NOT NULL || propert id |
+| property_name | VARCHAR(100) | NULL || property name |
+
+--------------------------------
 
 
 
