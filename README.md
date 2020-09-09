@@ -236,7 +236,7 @@ Entities need to be considered:
 | scheduled_time | VARCHAR(50) | NULL|| a timeslot scheduled by admin to let maintenances to process a work order 
 | category_name| VARCHAR(255) | NOT NULL || service types (there are 9 types maintenance services in total) |
 | email | VARCHAR(254) |NOT NULL| PK | tenants sign up and sign in by emails |
-| maintenance_email | VARCHAR(254) | NULL| PK | maintenances sign up and sign in by emails| 
+| maintenance_email | VARCHAR(254) | NULL| | maintenances sign up and sign in by emails| 
 | property_name | VARCHAR(100) | NOT NULL || property name |
 | unit| VARCHAR(50) | NOT NULL | | tenants' current unit number |
 | tenant_last_name | VARCHAR(255) | NULL | | tenants' last name |
@@ -244,6 +244,19 @@ Entities need to be considered:
 | tenant_phone_number | VARCHAR(11) | NULL | | tenants' phone number |
 
 -----------------------
+
+### Feedback:
+| Column | Type | Constraint | key| Description|
+|---|---|---|---|---|
+| work_order_id| VARCHAR(50) | NOT NULL | PK | work order id |
+| report_cost| DECIMAL(7,2) | NOT NULL || the cost of the items for tenants'work order |
+| attach_photos | VARCHAR(255)| NULL || receipts photos |
+| notes | VARCHAR(500) | NULL || information provided by tenants which wants admin to know |
+| item_description | VARCHAR(500) | NULL || the descriptions of the items for tenants'work order|
+
+-----------------------
+
+
 ### Location: 
 | Column | Type | Constraint | key|
 |---|---|---|---|
