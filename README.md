@@ -108,11 +108,11 @@ Entities need to be considered:
 | nick_name | VARCHAR(255) | NOT NULL | | tenants' nick name |
 | account_password | VARCHAR(255) | NOT NULL || tenants' password for the application logging |
 | identity | VARCHAR(50) | NULL | | tenants' identification number (e.g. ssn) |
-| phone_number | INT | NULL || tenants' phone number |
+| phone_number | VARCHAR(11) | NULL || tenants' phone number |
 | date_created | DATE | NOT NULL| |registeration date of a application account|
 | monthly_rent | DECIMAL(7,2) | NOT NULL | | a montly rent tenants need to pay for their current units |
 | current_balance | DECIMAL(7,2) | NOT NULL | | the amounts of money that in user's application account |
-| auto_payment| TINYINT(1)| NOT NULL | | an arrangement with a creditor that allow creditor to withdraw money from uses'card |
+| auto_payment| TINYINT(1)| NOT NULL | | a value of zero(false) means the account has no auto payment. a value of one(true) means the account has auto payment |
 | card_number| INT(11)| NULL | | tenants' card number |
 | cardholder_name| VARCHAR(255)| NULL | | tenants' carholder name |
 | exp_date| DATE| NULL | | tenants' card expiration date |
@@ -142,7 +142,7 @@ Entities need to be considered:
 |---|---|---|---|---|
 | lease_id| VARCHAR(25) | NOT NULL | PK | lease id |
 | lease_contract | VARCHAR(255) | NOT NULL ||tenants' lease agrrement sigend contract|
-| lease_status | TINYINT(1) | NULL || a value of zero means the lease is not active. a value of one means the lease is active|
+| lease_status | TINYINT(1) | NULL || a value of zero(false) means the lease is active. a value of one(true) means the lease is not active|
 | lease_created_date| DATETIME | NULL|| the date admin register a new tenant into admin system|
 | lease_start_date | DATE | NULL || the start date of the lease|
 | lease_end_date | DATE | NULL || the end date of the lease|
@@ -199,7 +199,7 @@ Entities need to be considered:
 | event_description | VARCHAR(500) | NOT NULL || the description of an event |
 | event_location | VARCHAR(255) | NOT NULL|| a place where an event will be happening |
 | property_id | VARCHAR(50) | NOT NULL |PK| propert id |
-| event_status | TINYINT(1) | NOT NULL||  a value of zero means the event is ongoing. a value of one means the event is expired |
+| event_status | TINYINT(1) | NOT NULL||  a value of zero(false) means the event is ongoing. a value of one(true) means the event is expired |
 | participants_counts | INT(11) | NOT NULL | | the number of tenants attending to the event |
 
 -----------------------
@@ -220,6 +220,30 @@ Entities need to be considered:
 | property_id | VARCHAR(50) | NULL || propert id |
 | category_name| VARCHAR(255) | NULL || service types (there are 9 types maintenance services in total) |
 
+
+-----------------------
+### Work_Order:
+| Column | Type | Constraint | key| Description|
+|---|---|---|---|---|
+| WorkOrder_id | VARCHAR(50) | NOT NULL  | PK | work order id |
+| work_order_description | VARCHAR(255) | NOT NULL | | the description provided by tenants about the maintenance issues |
+| problem_photo | VARCHAR(255) | NULL || photos of the maintenance issues (up to 3) |
+| time_preference | VARCHAR(500) |  NULL || three different availiable time slot provided by tenants |
+| permission_to_enter| TINYINT(1) | NOT NULL || a value of zero(false) means the permissions was not given. a value of one(true) means the permissions was given|
+| work_status | VARCHAR(25)| NOT NULL || 5 types of work status:unassigned, scheduled, in_progress, paused, completed |
+| date_created | DATETIME | NOT NULL || created date of a work order on application |
+| scheduled_date | DATE| NULL|| a date scheduled by admin to let maintenances to process a work order |
+| scheduled_time | VARCHAR(50) | NULL|| a timeslot scheduled by admin to let maintenances to process a work order 
+| category_name| VARCHAR(255) | NOT NULL || service types (there are 9 types maintenance services in total) |
+| email | VARCHAR(254) |NOT NULL| PK | tenants sign up and sign in by emails |
+| maintenance_email | VARCHAR(254) | NULL| PK | maintenances sign up and sign in by emails| 
+| property_name | VARCHAR(100) | NOT NULL || property name |
+| unit| VARCHAR(50) | NOT NULL | | tenants' current unit number |
+| tenant_last_name | VARCHAR(255) | NULL | | tenants' last name |
+| tenant_first_name | VARCHAR(255) | NULL | | tenants' first name |
+| tenant_phone_number | VARCHAR(11) | NULL | | tenants' phone number |
+
+-----------------------
 ### Location: 
 | Column | Type | Constraint | key|
 |---|---|---|---|
